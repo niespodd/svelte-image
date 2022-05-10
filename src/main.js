@@ -138,12 +138,12 @@ function getPathsObject(nodeSrc) {
     inPath,
     outDir,
     outPath: path.join(outDir, filename),
-    outUrl,
+    outUrl: "/" + outUrl,
     getResizePaths: (size) => {
       const filenameWithSize = getFilenameWithSize(inPath, size);
       return {
         outPath: path.join(outDir, filenameWithSize),
-        outUrl: path.join(path.dirname(outUrl), filenameWithSize),
+        outUrl: "/" + path.join(path.dirname(outUrl), filenameWithSize),
         outPathWebp: path.join(outDir, getWebpFilenameWithSize(inPath, size)),
       };
     },
